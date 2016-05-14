@@ -17,7 +17,7 @@ var config = {
                 loaders: ["html-loader"]
             },
             {
-                test: /(\.woff)|(\.eot)|(\.ttf)/,
+                test: /(\.woff)|(\.eot)|(\.ttf)|(\.png)|(\.jpg)/,
                 loader: 'url?limit=100000'
             },
         ]
