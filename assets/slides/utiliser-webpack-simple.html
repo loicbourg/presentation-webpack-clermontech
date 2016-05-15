@@ -1,8 +1,65 @@
 <section>
     Chargeons du javascript !
     <section>
-        <pre><code>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+//assets/js/home.js
+var showDate = function(id) {
+    document.getElementById(id).innerHTML = new Date().toDateString();
+};
 
-        </code></pre>
+showDate('date');
+            </code>
+        </pre>
     </section>
+
+    <section>
+            <pre><code class="hljs" data-trim contenteditable>
+//webpack.config.js
+var webpack = require('webpack');
+var path = require('path');
+
+module.exports = {
+    entry: {
+        home: "./js/home"
+    },
+    context: path.join(__dirname, 'assets'),
+    resolve: {
+        modulesDirectories: ['assets']
+    },
+    output: {
+        path: path.join(__dirname, './web/compiled'),
+        filename: '[name].compiled.js'
+    }
+};
+            </code></pre>
+    </section>
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+                <!-- web/index.html -->
+<div id="date" ></div>
+
+<script src="compiled/home.compiled.js" ></script>
+            </code>
+            </pre>
+    </section>
+
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+.
+├── assets
+│   └── js
+│       └── home.js
+├── package.json
+├── web
+│   ├── compiled
+│   │   └── home.compiled.js
+│   └── index.html
+└── webpack.config.js
+            </code>
+        </pre>
+    </section>
+
 </section>

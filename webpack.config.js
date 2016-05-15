@@ -2,10 +2,10 @@ var path = require('path');
 
 var config = {
     context: path.join(__dirname, 'assets'),
-    entry: [
-        './main.js',
-        'webpack/hot/dev-server'
-    ],
+    entry: {
+        main: './main.js',
+        'dev-server': 'webpack/hot/dev-server'
+    },
     module: {
         loaders: [
             {
@@ -19,7 +19,7 @@ var config = {
             {
                 test: /(\.woff)|(\.eot)|(\.ttf)|(\.png)|(\.jpg)/,
                 loader: 'url?limit=100000'
-            },
+            }
         ]
     },
     resolve: {
@@ -28,7 +28,7 @@ var config = {
     },
     output: {
         path: path.join(__dirname, 'public/compiled'),
-        filename: 'main.js',
+        filename: '[name].js',
         publicPath: '/compiled'
     }
 };

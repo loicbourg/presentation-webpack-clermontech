@@ -3,6 +3,7 @@ element.innerHTML = require('slides.js');
 
 require('reveal.js/css/reveal.css');
 require('reveal.js/css/theme/blood.css');
+require('reveal.js/lib/css/zenburn.css');
 
 require('script!reveal.js/lib/js/head.min.js');
 require('script!reveal.js/lib/js/classList.js');

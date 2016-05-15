@@ -1,0 +1,124 @@
+<section>
+    Gestion du css
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+$ npm install --save bootstrap
+            </code>
+        </pre>
+    </section>
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+// assets/js/home.js
+require('bootstrap/dist/css/bootstrap.css');
+
+var showDate = require('exports?showDate!js/showDate.js');
+
+showDate('date');
+            </code>
+        </pre>
+    </section>
+    <section>
+        <pre>
+ERROR in ../~/bootstrap/dist/css/bootstrap.css <br />
+You may need an appropriate loader to handle this file type.
+        </pre>
+    </section>
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+$ npm install --save-dev style-loader css-loader
+            </code>
+        </pre>
+    </section>
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+var webpack = require('webpack');
+var path = require('path');
+
+module.exports = {
+    ...
+    module: {
+        loaders: [
+            {
+                test: /\.css$/,
+                loaders: ["style-loader", "css-loader"]
+            }
+        ]
+    }
+};
+            </code>
+        </pre>
+    </section>
+    <section>
+ERROR in ../~/bootstrap/dist/fonts/glyphicons-halflings-regular.eot <br />
+You may need an appropriate loader to handle this file type.
+    </section>
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+$ npm install --save-dev url-loader file-loader
+            </code>
+        </pre>
+    </section>
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+// webpack.config.js
+var webpack = require('webpack');
+var path = require('path');
+
+module.exports = {
+...
+    module: {
+        loaders: [
+            ...
+            {
+                test: /(\.woff)|(\.eot)|(\.ttf)|(\.svg)/,
+                loader: 'url?limit=100000'
+            }
+        ]
+    }
+};
+            </code>
+        </pre>
+    </section>
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+<!-- web/index.html -->
+<div class="alert alert-success" id="date" ></div>
+            </code>
+        </pre>
+    </section>
+    <section>
+        121 ko de css pour afficher une alerte ??
+    </section>
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+$ npm install --save-dev less less-loader
+            </code>
+        </pre>
+    </section>
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+# assets/less/home.less
+@import "~bootstrap/less/variables.less";
+@import "~bootstrap/less/mixins/alerts.less";
+@import "~bootstrap/less/alerts.less";
+            </code>
+        </pre>
+    </section>
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+//assets/js/home.js
+require('less/home.less');
+            </code>
+        </pre>
+    </section>
+</section>

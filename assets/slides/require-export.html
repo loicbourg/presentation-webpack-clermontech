@@ -1,0 +1,25 @@
+<section>
+    Séparons les fichiers
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+// assets/js/showDate.js
+var showDate = function(id) {
+    document.getElementById(id).innerHTML = new Date().toDateString();
+};
+
+module.exports = showDate;
+            </code>
+        </pre>
+    </section>
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+// assets/js/home.js
+var showDate = require('js/showDate.js');
+
+showDate('date');
+            </code>
+        </pre>
+    </section>
+</section>

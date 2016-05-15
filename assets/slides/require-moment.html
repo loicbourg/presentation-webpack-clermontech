@@ -1,0 +1,38 @@
+<section>
+    Utilisons des librairies extérieures
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+$ npm install --save moment
+            </code>
+        </pre>
+    </section>
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+// webpack.config.js
+var webpack = require('webpack');
+var path = require('path');
+
+module.exports = {
+    ...
+    resolve: {
+        modulesDirectories: ['assets', 'node_modules']
+    }
+};
+            </code>
+        </pre>
+    </section>
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+//assets/js/showDate
+var moment = require('moment');
+
+var showDate = function(id) {
+    document.getElementById(id).innerHTML = moment().format();
+};
+            </code>
+        </pre>
+    </section>
+</section>

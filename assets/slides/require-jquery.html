@@ -1,0 +1,42 @@
+<section>
+    Comment gérer les librairies disponibles globalement ?
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+$ npm install --save jquery
+            </code>
+        </pre>
+    </section>
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+// webpack.config.js
+var webpack = require('webpack');
+var path = require('path');
+
+module.exports = {
+    ....
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery"
+         })
+    ]
+};
+            </code>
+        </pre>
+    </section>
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+// assets/js/showDate.js
+var moment = require('moment');
+
+var showDate = function(id) {
+    $('#' + id).html(moment().format());
+};
+            </code>
+        </pre>
+    </section>
+</section>

@@ -1,0 +1,54 @@
+<section>
+    Changer le style sans recharger la page
+    <section>
+        <img class="fragment" src="../images/impossibru.jpg">
+    </section>
+    <section>
+        ET SI ! <span class="fragment" >HOT MODULE RELOAD</span>
+    </section>
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+                $ npm install --save-dev webpack-dev-server
+            </code>
+        </pre>
+    </section>
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+// webpack.config.js
+var webpack = require('webpack');
+var path = require('path');
+
+module.exports = {
+entry: {
+    home: "./js/home",
+    'dev-server': 'webpack/hot/dev-server'
+},
+...
+output: {
+    path: path.join(__dirname, './web/compiled'),
+    filename: '[name].compiled.js',
+    publicPath: '/compiled'
+},
+...
+};
+            </code>
+        </pre>
+    </section>
+    <section>
+        <pre >
+            <code class="hljs" data-trim contenteditable>
+$ node_modules/.bin/webpack-dev-server --content-base  web --hot
+            </code>
+        </pre>
+    </section>
+    <section>
+        <video controls src="hmr.mp4">
+
+        </video>
+    </section>
+    <section>
+        <img height="500" src="../images/doge-hmr.png">
+    </section>
+</section>

@@ -1,0 +1,30 @@
+<section>
+    Séparons les fichiers sans syntaxe étrange
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+                $ npm install --save-dev exports-loader
+            </code>
+        </pre>
+    </section>
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+// assets/js/showDate
+var showDate = function(id) {
+    document.getElementById(id).innerHTML = new Date().toDateString();
+};
+            </code>
+        </pre>
+    </section>
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+// assets/js/home
+var showDate = require('exports?showDate!js/showDate.js');
+
+showDate('date');
+            </code>
+        </pre>
+    </section>
+</section>

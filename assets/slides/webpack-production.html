@@ -1,0 +1,55 @@
+<section>
+    Webpack en production
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+$ npm install --save-dev extract-text-webpack-plugin webpack-merge
+            </code>
+        </pre>
+    </section>
+    <section>
+ <pre>
+    <code class="hljs" data-trim contenteditable>
+//webpack.config.js
+var merge = require('webpack-merge');
+
+var common = {
+    //tout le json sauf les loaders less et css
+}
+if (process.env.NODE_ENV == 'production') {
+    // loaders less et css pour la production
+} else {
+    // loaders less et css que l'on avait avant
+}
+    </code>
+</pre>
+    </section>
+    <section>
+<pre>
+    <code class="hljs" data-trim contenteditable>
+module.exports = merge(common, {
+    module: {
+        loaders: [
+            {
+                test: /\.less$/,
+                loader: ExtractTextPlugin.extract("style", "css!less")
+            }
+        ]
+    },
+    plugins: [
+        new ExtractTextPlugin('[name].compiled.css')
+    ]
+    }
+);
+    </code>
+</pre>
+    </section>
+    <section>
+        <pre>
+            <code class="hljs" data-trim contenteditable>
+<!-- web/index.html -->
+<link rel="stylesheet" href="compiled/home.compiled.css" >
+            </code>
+        </pre>
+    </section>
+</section>
