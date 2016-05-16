@@ -1,0 +1,34 @@
+<section>
+    Chargement à la demande
+    <section>
+        <aside class="notes" >
+            Demandé de changer le fonctionnements, moyen de réduire poids de la page
+        </aside>
+        <pre>
+            <code class="fragment hljs" data-trim contenteditable>
+<!-- web/index.html -->
+<button id="show-date" >Afficher la date</button>
+            </code>
+        </pre>
+    </section>
+    <section>
+<pre>
+    <code class="hljs" data-trim contenteditable>
+// assets/js/home.js
+require('less/home.less');
+
+document
+        .getElementById('show-date')
+        .addEventListener('click', function(){
+    require.ensure([], function() {
+        var showDate = require('exports?showDate!js/showDate.js');
+        showDate('date');
+    });
+});
+    </code>
+</pre>
+    </section>
+    <section>
+        <video controls src="require-ensure.mp4" ></video>
+    </section>
+</section>

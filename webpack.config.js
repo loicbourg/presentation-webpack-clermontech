@@ -19,6 +19,10 @@ var config = {
             {
                 test: /(\.woff)|(\.eot)|(\.ttf)|(\.png)|(\.jpg)/,
                 loader: 'url?limit=100000'
+            },
+            {
+                test: /\.gif/,
+                loader: 'file'
             }
         ]
     },

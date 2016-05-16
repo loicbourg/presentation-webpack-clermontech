@@ -1,6 +1,12 @@
 <section>
     Changer le style sans recharger la page
     <section>
+        <aside class="notes" >
+            - Demandé de changer le stylen la couleur est pas assez B2C <br />
+            - Demander à l'intégrateur de le faire en l'amadouant <br />
+            - Gros intéret sur les pages qui sont dans un état difficile à reproduire (étapes multiples)
+
+        </aside>
         <img class="fragment" src="../images/impossibru.jpg">
     </section>
     <section>
@@ -21,11 +27,6 @@ var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
-entry: {
-    home: "./js/home",
-    'dev-server': 'webpack/hot/dev-server'
-},
-...
 output: {
     path: path.join(__dirname, './web/compiled'),
     filename: '[name].compiled.js',
@@ -37,11 +38,7 @@ output: {
         </pre>
     </section>
     <section>
-        <pre >
-            <code class="hljs" data-trim contenteditable>
-$ node_modules/.bin/webpack-dev-server --content-base  web --hot
-            </code>
-        </pre>
+$ node_modules/.bin/webpack-dev-server --content-base  web --hot --inline --progress
     </section>
     <section>
         <video controls src="hmr.mp4">
