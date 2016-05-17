@@ -13,7 +13,7 @@ var slides = [
     require('slides/require-jquery.html'),
     require('slides/require-bootstrap.html'),
     require('slides/hot-module-reload.html'),
-    require('slides/chargement-demande.html'),
+    //require('slides/chargement-demande.html'),
     require('slides/webpack-production.html'),
     require('slides/et-encore.html'),
     require('slides/fin.html'),
