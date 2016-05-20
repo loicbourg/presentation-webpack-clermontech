@@ -33,7 +33,7 @@ var config = {
     output: {
         path: path.join(__dirname, 'public/compiled'),
         filename: '[name].js',
-        publicPath: '/compiled'
+        publicPath: '/compiled/'
     }
 };
 module.exports = config;
